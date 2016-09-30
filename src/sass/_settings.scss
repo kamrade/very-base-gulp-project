@@ -1,0 +1,15 @@
+/* config */
+$colors: (
+  'primary': #24242e,
+  'secondary': #6e756d,
+  'light': #eafce3,
+  'dark': #222,
+  'accent': #fd705f,
+  'accent-good': #427f3e
+);
+
+
+/* functions */
+@function getColor($key) {
+  @return map-get($colors, $key);
+}
