@@ -5,7 +5,7 @@ var rename       = require('gulp-rename');
 var sass         = require('gulp-sass');
 var cleanCSS     = require('gulp-clean-css');
 var autoPrefixer = require('gulp-autoprefixer');
-
+var jade		 = require('gulp-jade');
 var livereload   = require('gulp-livereload');
 var connect      = require('gulp-connect');
 
@@ -36,16 +36,23 @@ gulp.task('connect', function() {
   });
 });
 
-gulp.task('html', function(){
-	gulp.src('index.html')
+gulp.task('jade', function(){
+	gulp.src('src/jade/**/*.jade')
+		.pipe(jade({ pretty:true }))
+		.pipe(gulp.dest('./'))
 		.pipe(connect.reload());
 });
+
+// gulp.task('html', function(){
+// 	gulp.src('index.html')
+// 		.pipe(connect.reload());
+// });
 
 gulp.task('watch', function(){
 	gulp.watch('src/sass/*.sass', ['sass']);
 	gulp.watch('src/sass/*.scss', ['sass']);
-	gulp.watch('index.html', ['html']);
+	gulp.watch('src/jade/index.jade', ['jade']);
 	gulp.watch('src/js/*.js', ['js']);
 });
 
-gulp.task('default', ['connect', 'html', 'js', 'sass', 'watch']);
+gulp.task('default', ['connect', 'jade', 'js', 'sass', 'watch']);
