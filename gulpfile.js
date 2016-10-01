@@ -49,9 +49,10 @@ gulp.task('jade', function(){
 // });
 
 gulp.task('watch', function(){
-	gulp.watch('src/sass/*.sass', ['sass']);
-	gulp.watch('src/sass/*.scss', ['sass']);
-	gulp.watch('src/jade/index.jade', ['jade']);
+	gulp.watch('src/sass/**/*.sass', ['sass']);
+	gulp.watch('src/sass/**/*.scss', ['sass']);
+	gulp.watch('src/jade/**/*.jade', ['jade']);
+	gulp.watch('src/jade/**/*.html', ['jade']);
 	gulp.watch('src/js/*.js', ['js']);
 });
 
