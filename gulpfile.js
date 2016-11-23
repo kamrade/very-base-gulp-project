@@ -15,6 +15,18 @@ gulp.task('js', function(){
 		.pipe(gulp.dest('public/js/'));
 });
 
+gulp.task('fonts', function(){
+	gulp.src('app/fonts/*.*')
+		.pipe(connect.reload())
+		.pipe(gulp.dest('public/css/fonts/'));
+});
+
+gulp.task('img', function(){
+	gulp.src('app/img/*.*')
+		.pipe(connect.reload())
+		.pipe(gulp.dest('public/css/img/'));
+});
+
 gulp.task('sass', function() {
 	gulp.src('app/styles/main.sass')
 	.pipe(sass().on('error', sass.logError))
