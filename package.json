@@ -1,8 +1,8 @@
 {
   "name": "very-base-gulp-project",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "very base gulp project",
-  "main": "/js/app.js",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
