@@ -46,12 +46,9 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-
 node_modules
 bower_components
-
 database.yml
-doc/
 *.swp
 *~
 .project
@@ -59,4 +56,3 @@ doc/
 .idea
 .secret
 public
-app/lib
